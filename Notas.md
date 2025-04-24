@@ -87,3 +87,10 @@ Por exemplo ``Modifier.padding``.
 A la hora de escribir apps, es importante recordar que podrían traducirse a otro idioma. Como aprendiste en un codelab anterior, un tipo de datos String es una secuencia de caracteres, como "Happy Birthday Sam!".
 
 Una string codificada es una que se escribe directamente en el código de tu app. Las strings codificadas hacen que sea más difícil traducir tu app a otros idiomas y dificultan la reutilización de una string en diferentes lugares de la app. Puedes extraer strings en un archivo de recursos para resolver estos problemas. En lugar de codificar strings en tu código, colócalas en un archivo, asígnales un nombre a los recursos de strings y usa los nombres cuando desees usar las strings. El nombre seguirá siendo el mismo, incluso si cambias la string o la traduces a otro idioma.
+
+
+# Resultado Exercicio
+
+Ao resultado final agregueille dúas cores
+
+![Resultado final](ImaxesMD/imaxeResultadoExercicioCoreando.png)
