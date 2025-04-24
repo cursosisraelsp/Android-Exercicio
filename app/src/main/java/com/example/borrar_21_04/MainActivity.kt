@@ -18,6 +18,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -84,11 +85,13 @@ fun GreetingText(message:String,from:String,modifier: Modifier = Modifier) {
             text=message,
             fontSize = 100.sp,
             lineHeight = 116.sp,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            color = Color.Blue
         )
         Text(
             text = from,
             fontSize = 36.sp,
+            color = Color.Magenta,
             modifier = Modifier
                 .padding(16.dp)
                 .align(alignment = Alignment.CenterHorizontally)
