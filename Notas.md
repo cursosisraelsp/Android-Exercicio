@@ -8,7 +8,7 @@ Los recursos son los archivos adicionales y el contenido estático que usa tu c�
 En tiempo de ejecución, Android utiliza el recurso adecuado según la configuración actual. Por ejemplo, puedes proporcionar un diseño de interfaz de la IU diferente según el tamaño de la pantalla o strings diferentes según la configuración de idioma.
 
 ## Cómo agrupar recursos
-[Enlace a explicación de documentación de recursos de kotlin] (https://developer.android.com/guide/topics/resources/available-resources?hl=es-419)
+[Enlace a explicación de documentación de recursos de kotlin](https://developer.android.com/guide/topics/resources/available-resources?hl=es-419)
 Siempre debes colocar cada tipo de recurso en un subdirectorio específico del directorio ``res/`` de tu proyecto.
 
 ```KOTLIN
