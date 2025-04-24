@@ -94,3 +94,11 @@ Una string codificada es una que se escribe directamente en el código de tu app
 Ao resultado final agregueille dúas cores
 
 ![Resultado final](ImaxesMD/imaxeResultadoExercicioCoreando.png)
+
+# Observacións finais
+
+Dentro deste exercicio deberemos ter en conta a clase recurso ``R`` e as diferentes formas de agregar recursos.
+Será usado neste nos elementos da imaxen e dos textos:
+
+- ``painterResource(R.drawable.androidparty)``
+- ``stringResource(R.string.happy_birthday_text)``
