@@ -60,6 +60,8 @@ setContent {
 
 # 5. Cambia la opacidad y ajusta la imagen
 
+[Enlace da documentación para personalizar imaxes](https://developer.android.com/develop/ui/compose/graphics/images/customize?hl=es-419#content-scale)
+
 ## Cómo ajustar la escala del contenido
 
 Hay bastantes tipos de ContentScale disponibles.
