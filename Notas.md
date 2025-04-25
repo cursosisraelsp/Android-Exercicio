@@ -102,3 +102,6 @@ Será usado neste nos elementos da imaxen e dos textos:
 
 - ``painterResource(R.drawable.androidparty)``
 - ``stringResource(R.string.happy_birthday_text)``
+
+# Exercicio : Artículo de Compose
+

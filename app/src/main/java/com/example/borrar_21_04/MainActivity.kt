@@ -78,15 +78,24 @@ fun GreetingText(message:String,from:String,modifier: Modifier = Modifier) {
     Column (
         modifier = Modifier
             .fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
+        val image = painterResource(R.drawable.bg_compose_background)
+        Image(
+            painter = image,
+            contentDescription = null,
+            contentScale = ContentScale.Fit,
+            alpha = 0.5F
+        )
         Text(
             text=message,
-            fontSize = 100.sp,
+            fontSize = 24.sp,
             lineHeight = 116.sp,
             textAlign = TextAlign.Center,
-            color = Color.Blue
+            color = Color.Blue,
+            modifier = Modifier
+                .padding(16.dp)
         )
         Text(
             text = from,
@@ -106,16 +115,16 @@ fun GreetingImage(message: String,from: String, modifier: Modifier = Modifier){
 
     // painterResource() --> función nativa
     // Accedemos os recursos cunha clase 'R'
-    val image = painterResource(R.drawable.androidparty)
+    val image = painterResource(R.drawable.bg_compose_background)
     // Se non se escribe 'contentDescription = null' aparecerá como erro o ELEMENTO COMPONIBLE
     Box(modifier){
         Image(
             painter = image,
             contentDescription = null,
-            contentScale = ContentScale.Crop,
+            contentScale = ContentScale.Fit,
             alpha = 0.5F
         )
-        GreetingText(message = stringResource(R.string.happy_birthday_text), from = stringResource(R.string.signature_text),modifier = Modifier)
+        GreetingText(message, from, modifier)
     }
 }
 
@@ -125,7 +134,7 @@ fun BirthdayCardPreview() {
     Borrar_21_04Theme {
         //En caso de vir da outra práctica, lembrar dar a actualizar
         GreetingImage(
-            message = stringResource(R.string.happy_birthday_text),
+            message = stringResource(R.string.TituloCompose),
             from = stringResource(R.string.signature_text)
         )
     }
