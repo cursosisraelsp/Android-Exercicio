@@ -39,9 +39,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GreetingImage(
+                    GreetingImageAndText(
                         message = stringResource(R.string.happy_birthday_text),
-                        from = stringResource(R.string.signature_text),
+                        from = stringResource(R.string.TextoMensaxe1),
+                        segundoParrafo = stringResource(R.string.TextoMensaxe2),
                         modifier = Modifier.padding(8.dp)
                     )
                 }
@@ -61,33 +62,16 @@ class MainActivity : ComponentActivity() {
 * Son os elementos 'funcions' que corresponden a Row,Column,Text,Image
 * */
 @Composable
-fun GreetingText(message:String,from:String,modifier: Modifier = Modifier) {
+fun GreetingText(message:String,from:String,segundoParrafo:String,modifier: Modifier = Modifier) {
 
-    //En el fragmento de código anterior,
-    // observa que se usan llaves en lugar de paréntesis en la función de componibilidad Row.
-    // Esto se llama sintaxis de expresión lambda final
-    // EN FORMA DE FILA
-   /* Row (modifier = modifier) {
-        Text(text="$message",fontSize = 25.sp,lineHeight = 96.sp)
-        Text(
-            text = from,
-            fontSize = 30.sp
-        )
-    }*/
-    // EN FORMA DE COLUMNA
+
     Column (
         modifier = Modifier
             .fillMaxSize(),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        val image = painterResource(R.drawable.bg_compose_background)
-        Image(
-            painter = image,
-            contentDescription = null,
-            contentScale = ContentScale.Fit,
-            alpha = 0.5F
-        )
+
         Text(
             text=message,
             fontSize = 24.sp,
@@ -99,33 +83,52 @@ fun GreetingText(message:String,from:String,modifier: Modifier = Modifier) {
         )
         Text(
             text = from,
-            fontSize = 36.sp,
-            color = Color.Magenta,
+            fontSize = 16.sp,
+            color = Color.Black,
+            textAlign = TextAlign.Justify,
             modifier = Modifier
                 .padding(16.dp)
-                .align(alignment = Alignment.CenterHorizontally)
+                .align(alignment = Alignment.Start)
+        )
+        Text(
+            text = segundoParrafo,
+            fontSize = 16.sp,
+            color = Color.Black,
+            textAlign = TextAlign.Justify,
+            modifier = Modifier
+                .padding(16.dp)
+                .align(alignment = Alignment.Start)
         )
     }
 
 }
-
-
 @Composable
 fun GreetingImage(message: String,from: String, modifier: Modifier = Modifier){
-
-    // painterResource() --> función nativa
+// painterResource() --> función nativa
     // Accedemos os recursos cunha clase 'R'
     val image = painterResource(R.drawable.bg_compose_background)
     // Se non se escribe 'contentDescription = null' aparecerá como erro o ELEMENTO COMPONIBLE
-    Box(modifier){
-        Image(
-            painter = image,
-            contentDescription = null,
-            contentScale = ContentScale.Fit,
-            alpha = 0.5F
-        )
-        GreetingText(message, from, modifier)
+    Image(
+        painter = image,
+        contentDescription = null,
+        contentScale = ContentScale.Fit,
+        alpha = 0.8F
+    )
+}
+
+@Composable
+fun GreetingImageAndText(message: String,from: String,segundoParrafo:String, modifier: Modifier = Modifier){
+    Column (
+        modifier = Modifier
+            .fillMaxSize(),
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ){
+        GreetingImage(message, from, modifier)
+        GreetingText(message, from,segundoParrafo, modifier)
+
     }
+
 }
 
 @Preview(showBackground = true,name="Pepe")
@@ -133,9 +136,10 @@ fun GreetingImage(message: String,from: String, modifier: Modifier = Modifier){
 fun BirthdayCardPreview() {
     Borrar_21_04Theme {
         //En caso de vir da outra práctica, lembrar dar a actualizar
-        GreetingImage(
+        GreetingImageAndText(
             message = stringResource(R.string.TituloCompose),
-            from = stringResource(R.string.signature_text)
+            segundoParrafo = stringResource(R.string.TextoMensaxe2),
+            from = stringResource(R.string.TextoMensaxe1)
         )
     }
 }
