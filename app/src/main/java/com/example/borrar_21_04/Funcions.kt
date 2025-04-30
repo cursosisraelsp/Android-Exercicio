@@ -99,15 +99,3 @@ fun GreetingImageAndText(message: String,from: String,segundoParrafo:String, mod
 
 }
 
-@Preview(showBackground = true,name="Pepe")
-@Composable
-fun BirthdayCardPreview() {
-    Borrar_21_04Theme {
-        //En caso de vir da outra práctica, lembrar dar a actualizar
-        GreetingImageAndText(
-            message = stringResource(R.string.TituloCompose),
-            segundoParrafo = stringResource(R.string.TextoMensaxe2),
-            from = stringResource(R.string.TextoMensaxe1)
-        )
-    }
-}
