@@ -12,12 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.borrar_21_04.ui.theme.Borrar_21_04Theme
 
 //#### FUNCIONS DE COMPONIBILIDADE
 /*
@@ -43,11 +40,11 @@ fun GreetingText(message:String,from:String,segundoParrafo:String,modifier: Modi
         Text(
             text=message,
             fontSize = 24.sp,
-            lineHeight = 116.sp,
-            textAlign = TextAlign.Center,
-            color = Color.Blue,
+            textAlign = TextAlign.Justify,
+            color = Color.Black,
             modifier = Modifier
                 .padding(16.dp)
+                .align(alignment = Alignment.Start)
         )
         Text(
             text = from,
