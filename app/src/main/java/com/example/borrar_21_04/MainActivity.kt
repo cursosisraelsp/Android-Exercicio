@@ -28,11 +28,9 @@ class MainActivity : ComponentActivity() {
                 ) {
                     GreetingImageAndText(
                         message = Datos()[0],
-                        from = Datos()[1],
                         segundoParrafo = Datos()[2],
                         modifier = Modifier.padding(8.dp)
                     )
-                    println(Datos()[0])
                 }
             }
         }
@@ -46,9 +44,8 @@ fun BirthdayCardPreview() {
     Borrar_21_04Theme {
         //En caso de vir da outra práctica, lembrar dar a actualizar
         GreetingImageAndText(
-            message = stringResource(R.string.TituloCompose),
-            segundoParrafo = stringResource(R.string.TextoMensaxe2),
-            from = stringResource(R.string.TextoMensaxe1)
+            message = stringResource(R.string.AllTasks),
+            segundoParrafo = stringResource(R.string.NiceWork)
         )
     }
 }

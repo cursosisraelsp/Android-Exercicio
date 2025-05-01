@@ -5,6 +5,6 @@ import androidx.compose.ui.res.stringResource
 
 @Composable
 fun Datos():Array<String>{
-    val datos = arrayOf(stringResource(R.string.happy_birthday_text),stringResource(R.string.TextoMensaxe1), stringResource(R.string.TextoMensaxe2))
+    val datos = arrayOf(stringResource(R.string.AllTasks),stringResource(R.string.NiceWork))
     return datos
 }

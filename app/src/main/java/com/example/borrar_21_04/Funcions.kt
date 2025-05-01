@@ -1,6 +1,7 @@
 package com.example.borrar_21_04
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -27,12 +29,12 @@ import androidx.compose.ui.unit.sp
 * Son os elementos 'funcions' que corresponden a Row,Column,Text,Image
 * */
 @Composable
-fun GreetingText(message:String,from:String,segundoParrafo:String,modifier: Modifier = Modifier) {
+fun GreetingText(message:String,segundoParrafo:String,modifier: Modifier = Modifier) {
 
 
     Column (
         modifier = Modifier
-            .fillMaxSize(),
+            .background(color = Color.Red),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
@@ -45,20 +47,14 @@ fun GreetingText(message:String,from:String,segundoParrafo:String,modifier: Modi
             modifier = Modifier
                 .padding(16.dp)
                 .align(alignment = Alignment.Start)
+                .background(color = Color.Gray)
         )
-        Text(
-            text = from,
-            fontSize = 16.sp,
-            color = Color.Black,
-            textAlign = TextAlign.Justify,
-            modifier = Modifier
-                .padding(16.dp)
-                .align(alignment = Alignment.Start)
-        )
+
         Text(
             text = segundoParrafo,
-            fontSize = 16.sp,
-            color = Color.Black,
+            fontWeight = FontWeight(900),
+            fontSize = 26.sp,
+            color = Color.White,
             textAlign = TextAlign.Justify,
             modifier = Modifier
                 .padding(16.dp)
@@ -68,29 +64,30 @@ fun GreetingText(message:String,from:String,segundoParrafo:String,modifier: Modi
 
 }
 @Composable
-fun GreetingImage(message: String,from: String, modifier: Modifier = Modifier){
+fun GreetingImage(message: String, modifier: Modifier = Modifier){
 // painterResource() --> función nativa
     // Accedemos os recursos cunha clase 'R'
-    val image = painterResource(R.drawable.bg_compose_background)
+    val image = painterResource(R.drawable.ic_task_completed)
     // Se non se escribe 'contentDescription = null' aparecerá como erro o ELEMENTO COMPONIBLE
     Image(
         painter = image,
         contentDescription = null,
         contentScale = ContentScale.Fit,
-        alpha = 0.8F
+
+        alpha = 1F
     )
 }
 
 @Composable
-fun GreetingImageAndText(message: String,from: String,segundoParrafo:String, modifier: Modifier = Modifier){
+fun GreetingImageAndText(message: String,segundoParrafo:String, modifier: Modifier = Modifier){
     Column (
         modifier = Modifier
             .fillMaxSize(),
-        verticalArrangement = Arrangement.Top,
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        GreetingImage(message, from, modifier)
-        GreetingText(message, from,segundoParrafo, modifier)
+        GreetingImage(message, modifier)
+        GreetingText(message, segundoParrafo, modifier)
 
     }
 
