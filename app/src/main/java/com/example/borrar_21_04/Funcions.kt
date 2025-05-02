@@ -1,5 +1,6 @@
 package com.example.borrar_21_04
 
+import androidx.annotation.FloatRange
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -32,22 +33,21 @@ import androidx.compose.ui.unit.sp
 fun GreetingText(message:String,segundoParrafo:String,modifier: Modifier = Modifier) {
 
 
-    Column (
-        modifier = Modifier
-            .background(color = Color.Red),
+    Column(
+        modifier = Modifier.background(Color.Red), // Eliminamos weight()
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
-    ){
-
+    ) {
         Text(
-            text=message,
+            text = message,
             fontSize = 24.sp,
             textAlign = TextAlign.Justify,
             color = Color.Black,
             modifier = Modifier
                 .padding(16.dp)
-                .align(alignment = Alignment.Start)
-                .background(color = Color.Gray)
+                .align(Alignment.Start)
+                .background(Color.Gray)
+
         )
 
         Text(
@@ -58,9 +58,12 @@ fun GreetingText(message:String,segundoParrafo:String,modifier: Modifier = Modif
             textAlign = TextAlign.Justify,
             modifier = Modifier
                 .padding(16.dp)
-                .align(alignment = Alignment.Start)
+                .align(Alignment.Start)
+
         )
     }
+
+
 
 }
 @Composable
