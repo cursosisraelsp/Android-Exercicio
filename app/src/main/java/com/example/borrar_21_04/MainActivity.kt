@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     GreetingImageAndText(
                         message = Datos()[0],
-                        segundoParrafo = Datos()[2],
+                        segundoParrafo = Datos()[1],
                         modifier = Modifier.padding(8.dp)
                     )
                 }
