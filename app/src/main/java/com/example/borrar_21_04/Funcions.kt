@@ -46,7 +46,7 @@ fun GreetingText(message:String,segundoParrafo:String,modifier: Modifier = Modif
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-    }*/
+    }*///
     Column(
         modifier = Modifier.background(Color.Green).fillMaxHeight(0.5f),
         //horizontalAlignment = Alignment.CenterHorizontally
