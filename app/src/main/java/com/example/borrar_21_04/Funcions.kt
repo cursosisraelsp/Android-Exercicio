@@ -48,19 +48,128 @@ fun GreetingText(message:String,segundoParrafo:String,modifier: Modifier = Modif
 
     }*///
     Column(
-        modifier = Modifier.background(Color.Green).fillMaxHeight(0.5f),
-        //horizontalAlignment = Alignment.CenterHorizontally
-        verticalArrangement = Arrangement.Center
+        modifier = Modifier
+            .background(Color.Black)
+            .fillMaxHeight(1f)
+            .padding(10.dp)
     ) {
-        val rectangleHeight = 100.dp
-        Box(Modifier.size(rectangleHeight).weight(weight = 3.0F, fill = true).background(Color.Blue), content = {
+
+        Box(
+            Modifier
+                .fillMaxHeight(0.5f)
+                .fillMaxWidth(1f)
+                .background(Color.Black)
+        ){
+            Row(
+                Modifier
+                    .background(color = Color.White)
+                    .fillMaxWidth(1f)
+                    .fillMaxHeight(1f)
+            ){
+                Box(
+                    Modifier
+                        .background(color = Color.Yellow)
+                        .fillMaxWidth(0.5f)
+                        .fillMaxHeight(1f)
+                ){
+                    Column(
+                        modifier = Modifier
+                            .fillMaxHeight(1f)
+                            .padding(10.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                             fontWeight = FontWeight.W900,
+                            text = "Text composable")
+                        Text(text = "Displays text and follows the recommended Material Design guidelines.")
+                    }
+
+                }
+                Box(
+                    Modifier
+                        .background(color = Color.Green)
+                        .fillMaxWidth(1f)
+                        .fillMaxHeight(1f)
+                ){
+                    Column(
+                        modifier = Modifier
+                            .fillMaxHeight(1f)
+                            .padding(10.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Text(fontWeight = FontWeight.W900,text = "Image composable")
+                        Text(text = "Creates a composable that lays out and draws a given Painter class object.")
+                    }
+                }
+            }
+        }
+        Box(
+            Modifier
+                .fillMaxHeight(1f)
+                .fillMaxWidth(1f)
+                .background(Color.White)
+
+        ){
+            Row(
+                Modifier
+                    .background(color = Color.Green)
+                    .fillMaxWidth(1f)
+                    .fillMaxHeight(1f)
+
+            ){
+                Box(
+                    Modifier
+                        .background(color = Color.Blue)
+                        .fillMaxWidth(0.5f)
+                        .fillMaxHeight(1f)
+
+                ){
+                    Column (
+                        modifier = Modifier
+                            .fillMaxHeight(1f)
+                            .padding(10.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ){
+                        Text(modifier = Modifier.padding(16.dp),fontWeight = FontWeight.W900,color = Color.White,text = "Row composable")
+                        Text(color = Color.White,text = "A layout composable that places its children in a horizontal sequence.")
+                    }
+                }
+                Box(
+                    Modifier
+                        .background(color = Color.Cyan)
+                        .fillMaxWidth(1f)
+                        .fillMaxHeight(1f)
+                ){
+                    Column(
+                        modifier = Modifier
+                            .fillMaxHeight(1f)
+                            .padding(10.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Text(modifier = Modifier.padding(end = 16.dp),fontWeight = FontWeight.W900,color = Color.Red,
+                            text = "Column composable")
+                        Text(text = "A layout composable that places its children in a vertical sequence.")
+                    }
+                }
+            }
+        }
+
+        /*Row(modifier= Modifier
+            .fillMaxHeight(1f)
+            .fillMaxWidth(1f)){
             Text(text = message,
                 fontSize = 24.sp,
                 textAlign = TextAlign.Justify,
                 color = Color.Black,
                 modifier = Modifier
-                    .padding(0.dp)
-                    .background(Color.Gray)
+                    .fillMaxWidth(0.5f)
+                    .fillMaxHeight(1f)
+                    .background(Color.Cyan)
+
             )
             Text( text = segundoParrafo,
                 fontWeight = FontWeight(900),
@@ -68,46 +177,23 @@ fun GreetingText(message:String,segundoParrafo:String,modifier: Modifier = Modif
                 color = Color.White,
                 textAlign = TextAlign.Justify,
                 modifier = Modifier
-                    .padding(0.dp)
+                    .fillMaxWidth(1f)
+                    .fillMaxHeight(1f)
+                    .background(Color.Magenta))
 
-                    .background(Color.Blue))
-        })
-
-        Row(
-            content = {
-                Text(text = message,
-                    fontSize = 24.sp,
-                    textAlign = TextAlign.Justify,
-                    color = Color.Black,
-                    modifier = Modifier
-                        .padding(0.dp)
-                        .background(Color.Cyan)
-                        .weight(weight = 1.0F, fill = true)
-                        )
-                Text( text = segundoParrafo,
-                    fontWeight = FontWeight(900),
-                    fontSize = 26.sp,
-                    color = Color.White,
-                    textAlign = TextAlign.Justify,
-                    modifier = Modifier
-                        .padding(0.dp)
-                        .weight(weight = 1.0F, fill = true)
-                        .background(Color.Magenta))
-
-            }
-        )
+        }*/
     }
-    Column(
+    /*Column(
         modifier = Modifier.background(Color.Yellow).fillMaxHeight(1f),
         //horizontalAlignment = Alignment.CenterHorizontally
-        verticalArrangement = Arrangement.Center
+        //verticalArrangement = Arrangement.Center
     ) {
-        val rectangleHeight = 100.dp
-        Box(
-            Modifier
-                .weight(weight = 0.3F, fill = true)
+
+        Row(
+            modifier= Modifier
+                .fillMaxHeight(1f)
+                .fillMaxWidth(1f)
                 .background(Color.Red)
-                .fillMaxWidth(0.5f)
         ){
             Text(text = message,
                 fontSize = 24.sp,
@@ -116,6 +202,8 @@ fun GreetingText(message:String,segundoParrafo:String,modifier: Modifier = Modif
                 modifier = Modifier
                     .padding(0.dp)
                     .background(Color.Gray)
+                    .fillMaxWidth(0.5f)
+                    .fillMaxHeight(1f)
             )
             Text( text = segundoParrafo,
                 fontWeight = FontWeight(900),
@@ -124,34 +212,13 @@ fun GreetingText(message:String,segundoParrafo:String,modifier: Modifier = Modif
                 textAlign = TextAlign.Justify,
                 modifier = Modifier
                     .padding(0.dp)
-
-                    .background(Color.Blue))
-        }
-
-        Row(Modifier
-            .weight(weight = 0.3F, fill = true)
-            .background(Color.DarkGray)){
-            Text(text = message,
-                fontSize = 24.sp,
-                textAlign = TextAlign.Justify,
-                color = Color.Black,
-                modifier = Modifier
-                    .padding(0.dp)
-                    .background(Color.Cyan)
-                    .weight(weight = 1.0F, fill = true)
+                    .fillMaxWidth(1f)
+                    .fillMaxHeight(1f)
+                    .background(Color.Blue)
             )
-            Text( text = segundoParrafo,
-                fontWeight = FontWeight(900),
-                fontSize = 26.sp,
-                color = Color.White,
-                textAlign = TextAlign.Justify,
-                modifier = Modifier
-                    .padding(0.dp)
-                    .weight(weight = 1.0F, fill = true)
-                    .background(Color.Magenta))
-
         }
-    }
+
+    }*/
 
 
 
@@ -176,14 +243,18 @@ fun GreetingImage(message: String, modifier: Modifier = Modifier){
 fun GreetingImageAndText(message: String,segundoParrafo:String, modifier: Modifier = Modifier){
     Column (
         modifier = Modifier
-            .fillMaxSize().background(color = Color.Black),
+            .fillMaxSize()
+            .background(color = Color.White)
+            .fillMaxHeight(1f),
         //verticalArrangement = Arrangement.SpaceBetween,
         //horizontalAlignment = Alignment.CenterHorizontally
     ){
        // GreetingImage(message, modifier)
         GreetingText(message, segundoParrafo, modifier)
 
+
     }
+
 
 }
 
