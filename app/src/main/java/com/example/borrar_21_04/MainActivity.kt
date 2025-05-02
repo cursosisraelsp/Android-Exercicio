@@ -28,7 +28,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GreetingImageAndText(
+
+                    GreetingCuadriculas(
                         message = Datos()[0],
                         segundoParrafo = Datos()[1],
                         modifier = Modifier.padding(8.dp)
@@ -45,9 +46,10 @@ class MainActivity : ComponentActivity() {
 fun BirthdayCardPreview() {
     Borrar_21_04Theme {
         //En caso de vir da outra práctica, lembrar dar a actualizar
-        GreetingImageAndText(
+        GreetingCuadriculas(
             message = stringResource(R.string.AllTasks),
             segundoParrafo = stringResource(R.string.NiceWork)
         )
+
     }
 }

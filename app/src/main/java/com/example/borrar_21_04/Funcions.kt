@@ -1,6 +1,5 @@
 package com.example.borrar_21_04
 
-import androidx.annotation.FloatRange
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -10,10 +9,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,31 +18,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+
 
 //#### FUNCIONS DE COMPONIBILIDADE
-/*
-* Cada función de componibilidad debe aceptar un parámetro Modifier opcional.
-* Los modificadores le indican a un elemento de la IU cómo aparecer o comportarse en su diseño de nivel superior.
-* */
-//#### ELEMENTOS COMPONIBLES
 
-/*
-* Son os elementos 'funcions' que corresponden a Row,Column,Text,Image
-* */
 @Composable
 fun GreetingText(message:String,segundoParrafo:String,modifier: Modifier = Modifier) {
 
 
-    /*Column(
-        modifier = Modifier.background(Color.Red).width(370.dp), // Eliminamos weight()
-        verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
 
-    }*///
     Column(
         modifier = Modifier
             .background(Color.Black)
@@ -158,98 +139,24 @@ fun GreetingText(message:String,segundoParrafo:String,modifier: Modifier = Modif
             }
         }
 
-        /*Row(modifier= Modifier
-            .fillMaxHeight(1f)
-            .fillMaxWidth(1f)){
-            Text(text = message,
-                fontSize = 24.sp,
-                textAlign = TextAlign.Justify,
-                color = Color.Black,
-                modifier = Modifier
-                    .fillMaxWidth(0.5f)
-                    .fillMaxHeight(1f)
-                    .background(Color.Cyan)
 
-            )
-            Text( text = segundoParrafo,
-                fontWeight = FontWeight(900),
-                fontSize = 26.sp,
-                color = Color.White,
-                textAlign = TextAlign.Justify,
-                modifier = Modifier
-                    .fillMaxWidth(1f)
-                    .fillMaxHeight(1f)
-                    .background(Color.Magenta))
-
-        }*/
     }
-    /*Column(
-        modifier = Modifier.background(Color.Yellow).fillMaxHeight(1f),
-        //horizontalAlignment = Alignment.CenterHorizontally
-        //verticalArrangement = Arrangement.Center
-    ) {
-
-        Row(
-            modifier= Modifier
-                .fillMaxHeight(1f)
-                .fillMaxWidth(1f)
-                .background(Color.Red)
-        ){
-            Text(text = message,
-                fontSize = 24.sp,
-                textAlign = TextAlign.Justify,
-                color = Color.Black,
-                modifier = Modifier
-                    .padding(0.dp)
-                    .background(Color.Gray)
-                    .fillMaxWidth(0.5f)
-                    .fillMaxHeight(1f)
-            )
-            Text( text = segundoParrafo,
-                fontWeight = FontWeight(900),
-                fontSize = 26.sp,
-                color = Color.White,
-                textAlign = TextAlign.Justify,
-                modifier = Modifier
-                    .padding(0.dp)
-                    .fillMaxWidth(1f)
-                    .fillMaxHeight(1f)
-                    .background(Color.Blue)
-            )
-        }
-
-    }*/
 
 
 
 
 }
-@Composable
-fun GreetingImage(message: String, modifier: Modifier = Modifier){
-// painterResource() --> función nativa
-    // Accedemos os recursos cunha clase 'R'
-    val image = painterResource(R.drawable.ic_task_completed)
-    // Se non se escribe 'contentDescription = null' aparecerá como erro o ELEMENTO COMPONIBLE
-    Image(
-        painter = image,
-        contentDescription = null,
-        contentScale = ContentScale.Fit,
 
-        alpha = 1F
-    )
-}
 
 @Composable
-fun GreetingImageAndText(message: String,segundoParrafo:String, modifier: Modifier = Modifier){
+fun GreetingCuadriculas(message: String,segundoParrafo:String, modifier: Modifier = Modifier){
     Column (
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color.White)
-            .fillMaxHeight(1f),
-        //verticalArrangement = Arrangement.SpaceBetween,
-        //horizontalAlignment = Alignment.CenterHorizontally
+            .fillMaxHeight(1f)
     ){
-       // GreetingImage(message, modifier)
+
         GreetingText(message, segundoParrafo, modifier)
 
 
